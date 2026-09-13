@@ -1007,6 +1007,62 @@
       </div>
     </div>
 
+    <div class="project-card reveal">
+  <div class="project-num">05</div>
+  <div class="project-tags">
+    <span class="project-tag">Python</span>
+    <span class="project-tag">Dagster</span>
+    <span class="project-tag">FastAPI</span>
+    <span class="project-tag">Railway</span>
+    <span class="project-tag">FinTech</span>
+  </div>
+  <div class="project-title">US Fintech Platform (NDA): ETL Pipelines for Financial Data</div>
+  <p class="project-desc">
+    Building production ETL pipelines for Custodial Data, Public and Private Funds at a B2B fintech platform serving financial advisors and asset managers. 4 vendor integrations, live in production.
+  </p>
+
+  <div class="case-study" style="margin-top:1.5rem;border-top:1px solid rgba(0,0,0,0.1);padding-top:1.5rem;display:none;">
+
+    <p style="font-family:var(--font-display);font-weight:800;font-size:1rem;text-transform:uppercase;margin-bottom:0.75rem;">// The Context</p>
+    <p style="font-size:0.83rem;color:var(--ink-muted);line-height:1.65;margin-bottom:1.25rem;">
+      A US-based B2B fintech platform (under NDA) serving financial advisors and asset managers. The core challenge: 4 custodians and fund data vendors each expose their data through different APIs, authentication schemes, and payload structures — and all of it needs to land in a unified internal data model reliably, on schedule, and without silent failures.
+    </p>
+
+    <p style="font-family:var(--font-display);font-weight:800;font-size:1rem;text-transform:uppercase;margin-bottom:0.75rem;">// What I Build</p>
+    <p style="font-size:0.83rem;color:var(--ink-muted);line-height:1.65;margin-bottom:1.25rem;">
+      <strong>ETL pipelines for Custodial Data, Public and Private Funds</strong> — extracting raw financial data from 4 vendor APIs, transforming it into the platform's core schema, and loading it into the database on a scheduled cadence.<br><br>
+      Each pipeline handles a different vendor's data contract: different authentication flows (OAuth2, API key headers, token refresh), different response shapes (nested JSON, paginated endpoints, flat CSVs), and different update frequencies. My job is to make them all behave consistently downstream.
+    </p>
+
+    <p style="font-family:var(--font-display);font-weight:800;font-size:1rem;text-transform:uppercase;margin-bottom:0.75rem;">// Vendor Auth & API Integration</p>
+    <p style="font-size:0.83rem;color:var(--ink-muted);line-height:1.65;margin-bottom:1.25rem;">
+      Built authentication and authorisation flows for all 4 vendors — handling OAuth2 token exchange, secure credential storage, token refresh logic, and retry on 401/429 responses. Each vendor's auth pattern is encapsulated so pipeline logic stays clean and auth concerns stay separate.
+    </p>
+
+    <p style="font-family:var(--font-display);font-weight:800;font-size:1rem;text-transform:uppercase;margin-bottom:0.75rem;">// Core Architecture</p>
+    <p style="font-size:0.83rem;color:var(--ink-muted);line-height:1.65;margin-bottom:1.25rem;">
+      Shared logic lives in a <code style="font-family:var(--font-mono);font-size:0.8rem;background:var(--surface-alt);padding:0.1rem 0.35rem;">core/</code> module — base HTTP client wrappers, common data validators, error handlers, and response normalisers. New vendor integrations extend these rather than rewriting them, keeping the codebase consistent as the number of integrations grows.
+    </p>
+
+    <p style="font-family:var(--font-display);font-weight:800;font-size:1rem;text-transform:uppercase;margin-bottom:0.75rem;">// Orchestration & Deployment</p>
+    <p style="font-size:0.83rem;color:var(--ink-muted);line-height:1.65;margin-bottom:1.25rem;">
+      Pipelines orchestrated with <strong>Dagster</strong> — assets and jobs define the dependency graph, sensors trigger runs on schedule or on external events, and the Dagster UI gives full visibility into what ran, when, and what failed. Deployed on <strong>Railway</strong>, with environment config managed via Railway's variable system so credentials never touch the codebase.
+    </p>
+
+    <p style="font-family:var(--font-display);font-weight:800;font-size:1rem;text-transform:uppercase;margin-bottom:0.75rem;">// Key Insight</p>
+    <p style="font-size:0.83rem;color:var(--ink-muted);line-height:1.65;">
+      The hardest part of financial data pipelines isn't the transformation — it's the contract management. Every vendor changes their API eventually. Building around a stable <code style="font-family:var(--font-mono);font-size:0.8rem;background:var(--surface-alt);padding:0.1rem 0.35rem;">core/</code> with vendor-specific adapters on top means a breaking change in one vendor's schema doesn't ripple through the whole system.
+    </p>
+
+  </div>
+
+  <button
+    onclick="const cs=this.previousElementSibling;cs.style.display=cs.style.display==='none'?'block':'none';this.textContent=this.textContent==='Case Study ↓'?'Case Study ↑':'Case Study ↓';"
+    style="margin-top:1rem;font-family:var(--font-display);font-weight:800;font-size:0.85rem;text-transform:uppercase;letter-spacing:0.06em;background:none;border:none;cursor:pointer;color:var(--teal);padding:0;">
+    Case Study ↓
+  </button>
+</div>
+
   </div>
 </section>
 
