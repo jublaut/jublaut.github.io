@@ -24,6 +24,7 @@ Background: 20 years in TV production (Ukraine), 2 years in finance administrati
 | 02 | Store Size, Employees & Revenue | SQL · Python · AdventureWorks 2019 | Multi-table SQL extraction from a live enterprise database; bubble chart revealing the "Staffing Paradox" — smaller stores often outperform larger ones |
 | 03 | Olist: 100K Orders, End-to-End | Power BI · Python · NLP · Pandas | Full pipeline: 9 raw Portuguese CSVs → cleaning → translation → feature engineering → sentiment dashboard + freight ratio analysis. Covers both data engineering and data analytics |
 | 04 | TinderHelper Telegram Bot | Java · Telegram API · OpenAI | Java backend bot with 6 conversation modes, GPT-4 integration, and a `ThreadLocal` state machine handling concurrent users |
+| 05 | Financial Data ETL Pipelines | SQL · Python · Dagster · Railway | Design and work with data models and schemas, applying data validation practices |
 
 **Experience** — Generation UK training (2025–2026), Office Admin / AR & AP at Emmyland UK (2022–2024), TV Director & Producer at StarLightMedia Ukraine (2005–2022).
 
